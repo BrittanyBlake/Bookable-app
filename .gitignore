@@ -31,3 +31,5 @@
 /config/master.key
 .DS_Store
 node_modules/
+# Ignore application configuration
+/config/application.yml

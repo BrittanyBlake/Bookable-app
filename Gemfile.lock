@@ -105,6 +105,8 @@ GEM
     faraday (0.17.3)
       multipart-post (>= 1.2, < 3)
     ffi (1.13.1)
+    figaro (1.2.0)
+      thor (>= 0.14.0, < 2)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
     fog (2.2.0)
@@ -497,6 +499,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   devise-bootstrap-views
+  figaro
   fog
   fog-aws
   font-awesome-rails
