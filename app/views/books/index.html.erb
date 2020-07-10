@@ -1,0 +1,15 @@
+<h1> <%= @user.username%>'s Books</h1>
+
+<h2>You have read <%= @user.books.count%> books </h2>
+
+<h3>Your books:</h3>
+<% @user.books.each do |book|%>
+    <p> Title: <%= book.title %> </p>
+    <p> Author: <%= book.author %> </p>
+    <p> Number of pages: <%= book.number_of_pages %> </p>
+    <p> Group:  </p>
+<% end %>
+
+<%= link_to edit_user_registration_path(current_user), class: 'btn btn-success text-white h3' do %>
+				<%= fa_icon "plus" %> Add new Book
+<% end %><br>
