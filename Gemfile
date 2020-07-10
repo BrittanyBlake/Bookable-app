@@ -32,6 +32,10 @@ gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 gem 'jquery-rails'
 gem "font-awesome-rails"
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
+gem 'fog-aws'
 
 
 # Use ActiveStorage variant

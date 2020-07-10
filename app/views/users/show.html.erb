@@ -1,7 +1,7 @@
 <body class=" blue">
   <div class="container page-content text-center">
     <header>
-      <p>Image</p>
+      <%= image_tag(@user.image_url.to_s) %>
       <h1> <%= @user.username%>'s Profile </h1>
     </header>
   	<div class="actions">
