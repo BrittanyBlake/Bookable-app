@@ -28,6 +28,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'rubocop', '~>0.81.0'
 gem 'devise'
 gem 'pg'
+gem 'twitter-bootstrap-rails'
+gem 'devise-bootstrap-views'
+gem 'jquery-rails'
+
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
