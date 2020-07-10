@@ -1,16 +1,15 @@
-  <div class="navbar navbar-default navbar-static-top">
+  <div class="navbar navbar-static-top blue">
       <div class="container>
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">BookableApp</a>
+        <a class="navbar-brand  text-white" href="#">BookableApp</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1"  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
+            <li><%= link_to "Link1", "/path1" %></li>
+            <li><%= link_to "signout", destroy_user_session_path, class:" text-white", method: :delete  %></li>
           </ul>
         </div>
       </div>

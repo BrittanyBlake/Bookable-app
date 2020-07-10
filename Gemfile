@@ -31,6 +31,7 @@ gem 'pg'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 gem 'jquery-rails'
+gem "font-awesome-rails"
 
 
 # Use ActiveStorage variant
