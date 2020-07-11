@@ -8,11 +8,13 @@ class BooksController < ApplicationController
         @book = Book.new
     end
 
+    
+
     def create
-        @book = current_user.books.build(book_params)
+        @book = current_user.books.new(book_params)
         if @book.save
             flash[:notice] = 'Book was successfully added'
-            redirect to @book
+            redirect_to @book
         else
             flash.now[:alert] = 'something went wrong'
             render 'new'
@@ -21,6 +23,6 @@ class BooksController < ApplicationController
 
     private
     def book_params
-        params.require(:book).permit(:title, :author, :number_of_pages)
+        params.require(:book).permit(:title, :author, :number_of_pages, :image)
     end
 end
