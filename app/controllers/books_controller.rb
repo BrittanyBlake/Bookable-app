@@ -1,14 +1,13 @@
 class BooksController < ApplicationController
     def index
         @user = User.find(current_user.id)
-        @my_books = @user.books
+        @my_books = Book.where(user: current_user).ordered_by_most_recent
     end
 
     def new
+       
         @book = Book.new
     end
-
-    
 
     def create
         @book = current_user.books.new(book_params)
@@ -20,6 +19,11 @@ class BooksController < ApplicationController
             render 'new'
         end    
     end
+
+    def external
+        @books = Book.where(user: (User.where.not(id: current_user.id))).ordered_by_most_recent
+    end
+
 
     private
     def book_params
