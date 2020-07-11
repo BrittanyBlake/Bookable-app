@@ -1,11 +1,10 @@
 class BooksController < ApplicationController
     def index
-        @user = User.find(current_user.id)
+        @user = current_user
         @my_books = Book.where(user: current_user).ordered_by_most_recent
     end
 
     def new
-       
         @book = Book.new
     end
 
