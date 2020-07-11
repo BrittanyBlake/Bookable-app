@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
     def index
         @user = current_user
-        @groups = Group.where(user: current_user)
+        @groups = Group.where(user: current_user).ordered_alphabetically
     end
 
     def new
