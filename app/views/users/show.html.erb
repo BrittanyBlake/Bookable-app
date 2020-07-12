@@ -1,11 +1,11 @@
 <body class=" blue">
   <div class="container page-content text-center">
     <header>
-      <%= image_tag(@user.image_url.to_s) %>
+      <%= image_tag @user.image.url, class:"avatar"%>
       <h1> <%= @user.username%>'s Profile </h1>
     </header>
   	<div class="actions">
-			<%= link_to edit_user_registration_path(current_user), class: 'text-white h3' do %>
+			<%= link_to edit_user_registration_path(current_user), class: 'text-white h3 ' do %>
 				<%= fa_icon "cog" %> Account Settings
 			<% end %> <br>
 			<%= link_to books_path(current_user), class: 'text-white h3' do %>
@@ -21,7 +21,7 @@
 				<%= fa_icon "users" %> Groups
 			<% end %><br>
 
-			
+			<%= link_to "signout", destroy_user_session_path, class:" text-white", method: :delete  %>
 		</div>
 	</div>
 </body>

@@ -28,7 +28,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'rubocop', '~>0.81.0'
 gem 'devise'
 gem 'pg'
-gem 'twitter-bootstrap-rails'
+gem 'bootstrap', '~> 4.4.1'
+gem 'jquery-rails'
 gem 'devise-bootstrap-views'
 gem 'jquery-rails'
 gem "font-awesome-rails"
@@ -37,6 +38,7 @@ gem 'mini_magick'
 gem 'fog'
 gem 'fog-aws'
 gem "figaro"
+
 
 
 # Use ActiveStorage variant

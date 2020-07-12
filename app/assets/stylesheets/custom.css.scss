@@ -1,5 +1,6 @@
 
 @import "font-awesome";
+@import "bootstrap";
 
  .vertical{
     margin-top: 25%;
@@ -17,7 +18,8 @@
      border-color:#3778c2 ;
  }
 
- .text-white{
-     color:lightgray;
- }
- 
+.avatar {
+     width: 250px;
+    height: 250px;
+    border-radius: 50%;
+  }
