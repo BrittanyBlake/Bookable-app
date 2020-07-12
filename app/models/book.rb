@@ -1,7 +1,7 @@
 class Book < ApplicationRecord
+    belongs_to :user
     has_many :book_groups
     has_many :groups, through: :book_groups
-    belongs_to :user
     validates :title, presence: true, length: {minimum: 3, maximum: 30}
     validates :author, presence: true, length: {minimum: 3, maximum: 30}
     validates :number_of_pages, presence: true

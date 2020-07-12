@@ -1,0 +1,18 @@
+<body class=" blue">
+  <div class="container page-content text-center">
+    <header>
+      <h1> <%= @book.title %></h1>
+    </header>
+
+    <% if @book.groups.any? %>
+        <%= render @book.groups%>
+    <% end %>
+    
+    <%= link_to edit_book_path(@book), class: 'text-white h3' do %>
+				<%= fa_icon "cog" %> Edit book
+			<% end %> <br>
+	</div>
+</body>
+
+
+

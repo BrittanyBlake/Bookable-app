@@ -1,13 +1,15 @@
 <h1> <%= @user.username%>'s Books</h1>
 
-<h2>You have read <%= pluralize(@my_books.count, "book") %>  </h2>
+<h2>You have read <%= pluralize(@books.count, "book") %>  </h2>
 
 <h3>Your books:</h3>
-<% @my_books.each do |book|%>
+<% @books.each do |book|%>
     <p> Title: <%= book.title %> </p>
     <p> Author: <%= book.author %> </p>
     <p> Number of pages: <%= book.number_of_pages %> </p>
-    <p> Group: <%= book.groups.name %> </p>
+    <% if book.groups.any? %>
+        <%= render book.groups%>
+    <% end %>
 <% end %>
 
 <%= link_to new_book_path, class: 'btn btn-success text-white h3' do %>
