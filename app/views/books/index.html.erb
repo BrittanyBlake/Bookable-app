@@ -10,8 +10,9 @@
     <% if book.groups.any? %>
         <%= render book.groups%>
     <% end %>
-<% end %>
+<% end %> <br>
 
 <%= link_to new_book_path, class: 'btn btn-success text-white h3' do %>
 	<%= fa_icon "plus" %> Add new Book
 <% end %><br>
+

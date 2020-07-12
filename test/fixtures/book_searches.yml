@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  isbn: MyString
+  title: MyString
+  genre: MyString
+  rating: 9.99
+
+two:
+  isbn: MyString
+  title: MyString
+  genre: MyString
+  rating: 9.99
