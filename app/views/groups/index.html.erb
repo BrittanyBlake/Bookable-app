@@ -5,11 +5,12 @@
 
 <h3>Your groups:</h3>
 <% @groups.each do |group|%>
-    <p> Name <%= group.name %> </p>
+    <p> Name <%= link_to group.name, group_path(group) %> </p>
+    
     <p> Number of books: <%= group.books.count %> </p>
     <p> Created <%= time_ago_in_words(group.created_at)%> ago </p>
 <% end %>
 
 <%= link_to new_group_path, class: 'btn btn-success text-white h3' do %>
-	<%= fa_icon "plus" %> Add new Group
+	<%= fa_icon "plus" %> Create new Group
 <% end %><br>

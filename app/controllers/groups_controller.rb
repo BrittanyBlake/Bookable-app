@@ -21,6 +21,7 @@ class GroupsController < ApplicationController
 
     def show
         @group = Group.find(params[:id])
+        @books = @group.books
     end
 
     private
