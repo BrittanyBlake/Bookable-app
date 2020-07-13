@@ -1,23 +1,42 @@
-<body class=" blue">
 
+
+<div class="nav">
     <%= render 'layouts/navigation'%>
-
-	<%= render 'layouts/messages'%>
-
-
-  <div class="container page-content text-center">
-    <header>
-      <h1> <%= @group.name  %></h1>
-    </header>
-
-	<% @books.each do |book|%>
-    	<p> Title: <%= book.title %> </p>
-    	<p> Author: <%= book.author %> </p>
-    	<p> Number of pages: <%= book.number_of_pages %> </p>
-	<% end %>
-
-	</div>
-</body>
+    <h3 class="text-white center-nav"> <%= @group.name %></h3>
+    <%= render 'layouts/messages'%>
+</div>
 
 
+<div class="card">
+  <div class="card-horizontal">
+    <div class="card-body">
+      <h4 class="card-title text-muted text-center">This group has <%= pluralize(@group.books.count, "book") %> </h4>
+    </div>
+  </div>
+</div>
 
+<div class="container">
+  <div class="row">
+    <div class="col-12 mt-3 text-center">
+			<% @books.each do |book|%>
+        <div class="card mb-3">
+          <div class="card-horizontal">
+            <div class="card-body">
+              <h4 class="card-title"> <%= link_to book.title, book_path(book), class:"text-decoration-none text-muted" %></h4>
+              <p class="card-text  text-muted "> <strong> Title: </strong> <%= book.title %> </p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Created <%= time_ago_in_words(book.created_at)%> ago </small>
+          </div>
+        </div>
+			<% end %>
+			<div class="text-center my-5">
+				<%= link_to new_group_path, class: 'btn btn-success text-white h3' do %>
+					<%= fa_icon "plus" %> Create new Group
+                <% end %>
+			</div>
+		</div>
+  </div>
+</div>
+   
