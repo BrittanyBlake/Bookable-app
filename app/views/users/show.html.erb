@@ -1,33 +1,35 @@
 <div class=" container-fluid blue w-100 h-100vh">
 <%= render 'layouts/navigation'%>
 
-<%= render 'layouts/messages'%>
+<div class="col-11 mx-5 my-3">
+	<%= render 'layouts/messages'%>
+</div>
 
 
   <div class=" page-content text-center">
   
-    <header>
+    <header class="mt-4 mb-2 py-3  text-white">
       <%= image_tag @user.image.url, class:"avatar"%>
       <h1> <%= @user.username%>'s Profile </h1>
     </header>
   	<div class="actions">
-			<%= link_to edit_user_registration_path(current_user), class: 'text-white h3 ' do %>
-				<%= fa_icon "cog" %> Account Settings
+			<%= link_to edit_user_registration_path(current_user), class: 'text-white h4' do %>
+				<%= fa_icon "cog", class: 'mb-4' %> Account Settings
 			<% end %> <br>
-			<%= link_to books_path(current_user), class: 'text-white h3' do %>
-				<%= fa_icon "book" %> All my Books
+			<%= link_to books_path(current_user), class: 'text-white h4' do %>
+				<%= fa_icon "book", class: 'mb-4' %> All my Books
 			<% end %><br>
-			<%= link_to external_path, class: 'text-white h3' do %>
-				<%= fa_icon "th-list" %> Books you might like
+			<%= link_to external_path, class: 'text-white h4' do %>
+				<%= fa_icon "th-list", class: 'mb-4' %> Books you might like
 			<% end %><br>
-			<%= link_to new_book_path, class: 'text-white h3' do %>
-				<%= fa_icon "plus" %> Add new Book
+			<%= link_to new_book_path, class: 'text-white h4' do %>
+				<%= fa_icon "plus", class: 'mb-4' %> Add new Book
 			<% end %><br>
-			<%= link_to groups_path, class: 'text-white h3' do %>
-				<%= fa_icon "users" %> Groups
+			<%= link_to groups_path, class: 'text-white h4' do %>
+				<%= fa_icon "users", class: 'mb-4' %> Groups
 			<% end %><br>
-			<%= link_to groups_path, class: 'text-white h3' do %>
-				<%= fa_icon "search" %> Search Goodreads
+			<%= link_to groups_path, class: 'text-white h4' do %>
+				<%= fa_icon "search", class: 'mb-4' %> Search Goodreads
 			<% end %><br>
 		</div>
 	</div>
