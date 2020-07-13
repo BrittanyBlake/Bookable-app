@@ -1,5 +1,9 @@
-<body class=" blue">
-  <div class="container page-content text-center">
+<div class=" container-fluid blue w-100 h-100vh">
+<%= render 'layouts/navigation'%>
+
+
+  <div class=" page-content text-center">
+  
     <header>
       <%= image_tag @user.image.url, class:"avatar"%>
       <h1> <%= @user.username%>'s Profile </h1>
@@ -20,9 +24,12 @@
 			<%= link_to groups_path, class: 'text-white h3' do %>
 				<%= fa_icon "users" %> Groups
 			<% end %><br>
+			<%= link_to groups_path, class: 'text-white h3' do %>
+				<%= fa_icon "search" %> Search Goodreads
+			<% end %><br>
 		</div>
 	</div>
-</body>
+</div>
 
 
 

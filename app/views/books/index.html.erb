@@ -1,3 +1,7 @@
+<div class="nav">
+    <%= render 'layouts/navigation'%>
+</div>
+
 <h1> <%= @user.username%>'s Books</h1>
 
 <h2>You have read <%= pluralize(@books.count, "book") %>  </h2>

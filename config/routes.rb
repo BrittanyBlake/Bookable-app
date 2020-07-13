@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :books
   get 'external', to: 'books#external'
   resources :groups
+  get 'search_book', to: 'books_search#search'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

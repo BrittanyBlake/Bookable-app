@@ -7,20 +7,26 @@
      font-size: 50px;
  }
 
- .text-center{
-     margin-left: 15%;
- }
+//  .text-center{
+//      margin-left: 15%;
+//  }
 
  .btn{
      width: 25%;
  }
 
- .blue{
-     background-color:#3778c2 ;
+ .nav{
+     background-color:#3778c2
  }
- .navbar{
-     border-color:#3778c2 ;
+
+.blue{
+    //  background-color:#3778c2 ;
+    background-image: linear-gradient(to bottom left, #143562,#3778c2 );
+   height: 100vh
  }
+//  .navbar{
+//      border-color:#3778c2 ;
+//  }
 
 .avatar {
      width: 250px;

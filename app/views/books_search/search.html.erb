@@ -1,0 +1,19 @@
+<div class="nav">
+    <%= render 'layouts/navigation'%>
+</div>
+
+<div class='search-area'>
+    <h3>Search Books</h3>
+    <%= form_tag search_book_path, method: :get do %>
+        <div class="form-group row">
+            <div class="col-sm-9 no-right-padding">
+                <%= text_field_tag :book_search, params[:book_search], placeholder: "Book title", autofocus: true, class: "form-control form-control-lg" %>
+            </div>
+            <div class="col-sm-3 no-left-padding">
+                <%= button_tag type: :submit, class: "btn btn-success" do %>
+                    <%= "Search"%>
+                <% end %>
+            </div>
+        </div>
+    <% end %>
+</div>

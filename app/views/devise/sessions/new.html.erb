@@ -1,3 +1,9 @@
+<div class="nav">
+    <%= render 'layouts/navigation'%>
+</div>
+
+<div class="col-11 mx-5 my-5">
+
 <h1><%= t('.sign_in') %></h1>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -26,3 +32,5 @@
 <% end %>
 
 <%= render 'devise/shared/links' %>
+
+</div>
