@@ -5,6 +5,7 @@ class Book < ApplicationRecord
     validates :title, presence: true, length: {minimum: 3, maximum: 30}
     validates :author, presence: true, length: {minimum: 3, maximum: 30}
     validates :number_of_pages, presence: true
+    validates :description, presence: true, length: {minimum: 10, maxmimum: 300}
     mount_uploader :image, ImageUploader
     scope :ordered_by_most_recent, -> { order(created_at: :desc) }
     

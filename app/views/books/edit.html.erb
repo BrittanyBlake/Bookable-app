@@ -20,6 +20,11 @@
     <%= f.text_field :number_of_pages, placeholder:'Number of pages', class: 'form-control' %>
   </div>
 
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, placeholder:'Thoughts on this book?', class: 'form-control' %>
+  </div>
+
   <div class="form-group row">
     <%= f.label :groups, class:"col-2 col-form-label text-light"%>
     <div class="col-10">

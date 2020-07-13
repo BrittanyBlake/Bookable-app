@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_12_185634) do
+ActiveRecord::Schema.define(version: 2020_07_13_182320) do
 
   create_table "book_groups", force: :cascade do |t|
     t.integer "book_id"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_07_12_185634) do
     t.datetime "updated_at", null: false
     t.string "author"
     t.string "image"
+    t.text "description"
     t.index ["user_id"], name: "index_books_on_user_id"
   end
 

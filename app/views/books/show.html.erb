@@ -1,22 +1,40 @@
-<body class=" blue">
 
+
+<div class="nav">
     <%= render 'layouts/navigation'%>
-<%= render 'layouts/messages'%>
+    <h3 class="text-white center-nav"> <%= @book.title%></h3>
+    <%= render 'layouts/messages'%>
+</div>
 
-  <div class="container page-content text-center">
-    <header>
-      <h1> <%= @book.title %></h1>
-    </header>
+<div class="container">
+  <div class="row">
+    <div class="col-12 mt-3">
+      <div class="card mb-3">
+        <div class="card-horizontal">
 
-    <% if @book.groups.any? %>
-        <%= render @book.groups%>
-    <% end %>
-    
-    <%= link_to edit_book_path(@book), class: 'text-white h3' do %>
-				<%= fa_icon "cog" %> Edit book
-			<% end %> <br>
-	</div>
-</body>
+          <div class="img-square-wrapper">
+            <%= image_tag(@book.image.present? ? @book.image.url : '', size: '200x200') %> 
+          </div>
 
-
-
+          <div class="card-body">
+            <p class="card-text  text-muted "> <strong> Your thoughts:</strong>  <%= @book.description %> </p>
+            <p class="card-text  text-muted "><strong> Author:</strong> <%= @book.author %></p>
+            <p class="card-text  text-muted "> <strong>Number of pages:</strong> <%= @book.number_of_pages %> </p>
+            <% if @book.groups.any? %>
+              <%= render @book.groups%>
+            <% end %>
+            
+          </div>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted">Created <%= time_ago_in_words(@book.created_at)%> ago</small><br>
+            <small> 
+              <%= link_to edit_book_path(@book), class: 'text-muted' do %>
+				        <%= fa_icon "cog" %> Edit book
+              <% end %>
+            </small>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

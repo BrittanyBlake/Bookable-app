@@ -11,9 +11,6 @@
     <% if book.groups.any? %>
          <%= render book.groups%>
     <% end %>
-    <% if !current_user.books.include?(book) %>
-        <%= link_to 'Add to my books', new_book_path(user: current_user, id: book.id), class: "btn btn-xs btn-success"%>
-    <% end %>
     
 <% end %>
 
