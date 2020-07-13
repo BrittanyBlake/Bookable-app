@@ -32,7 +32,6 @@ gem 'pg'
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
 gem 'devise-bootstrap-views'
-gem 'jquery-rails'
 gem "font-awesome-rails"
 gem 'carrierwave'
 gem 'mini_magick'

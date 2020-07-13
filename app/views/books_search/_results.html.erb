@@ -1,0 +1,39 @@
+
+
+<section>
+  <h2>Query:</h2>
+  <p>" <%= if @search_raw then @search_raw.query end %> "</p>
+</section>
+
+<section class='results-area'>
+  <h2>Results:</h2>
+    <% if @multi_results %>
+      <% @multi_results.results.work.each do |item| %>
+        <p class='results-text'>
+          <%= item.best_book.title %>
+          (<%= item.original_publication_year || "N/A" %>),
+          <%= item.best_book.author.name %>
+
+          <div class='read-more-link'>
+            <%= link_to 'Check it!', books_search_path(item.best_book.id), class: 'button' %>
+          </div>
+        </p>
+
+      <% end %>
+    <% end %>
+
+    <% if @unique_result %>
+      <%= @unique_result.results.work.best_book.title %>
+      (<%= @unique_result.results.work.original_publication_year || "N/A" %>),
+      <%= @unique_result.results.work.best_book.author.name %>.
+      <div class='read-more-link'>
+        <%= link_to 'Check it!', books_search_path(@unique_result.results.work.best_book.id) %>
+      </div>
+    <% end %>
+
+ 
+</section>
+
+<div clas='footer-nav'>
+  <a class='button' href="/">Back</a>
+</div>

@@ -4,8 +4,12 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get '/user' => "users#show", :as => :user_root
   resources :books
+  post 'new_book', to: 'books#new'
   get 'external', to: 'books#external'
   resources :groups
-  get 'search_book', to: 'books_search#search'
+  resources :books_search
+  get 'goodreads', to: 'books_search#index'
+  get 'result', to: 'books_search#results'
+ 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

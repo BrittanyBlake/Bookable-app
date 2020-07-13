@@ -1,0 +1,14 @@
+
+<h1><%= @book_search_result.title %></h1>
+
+<p><%= @book_search_result_author %></p>
+
+<img src='<%= @book_search_result.image_url %>'>
+
+<p class='results-text'><%= if @book_search_result.description then @book_search_result.description.html_safe end %></p>
+
+<p class='results-text'>Goodreads ID:<%= @book_search_result.id %></p>
+
+<%= link_to "Add to reading list", { :controller => "book", :action => "new", :book_id => @book_search_result.id }, class: 'button' %>
+
+</div>

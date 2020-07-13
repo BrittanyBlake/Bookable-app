@@ -42,11 +42,6 @@ class BooksController < ApplicationController
         end
     end
 
-    def destroy
-        @book.destroy
-        redirect_to @book
-    end
-
 
     private
     def book_params

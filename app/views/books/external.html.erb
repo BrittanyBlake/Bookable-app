@@ -8,7 +8,13 @@
     <p> Title: <%= book.title %> </p>
     <p> Author: <%= book.author %> </p>
     <p> Number of pages: <%= book.number_of_pages %> </p>
-    <p> Group: <%= book.groups.name %> </p>
+    <% if book.groups.any? %>
+         <%= render book.groups%>
+    <% end %>
+    <% if !current_user.books.include?(book) %>
+        <%= link_to 'Add to my books', new_book_path(user: current_user, id: book.id), class: "btn btn-xs btn-success"%>
+    <% end %>
+    
 <% end %>
 
 <%= link_to new_book_path, class: 'btn btn-success text-white h3' do %>
