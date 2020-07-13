@@ -2,6 +2,7 @@
 @import "font-awesome";
 @import "bootstrap";
 
+
  .vertical{
     margin-top: 25%;
      font-size: 50px;
@@ -19,6 +20,12 @@
      background-color:#3778c2
  }
 
+ .center-nav{
+     display: flex;
+     align-items: center;
+     margin-left: 25%;
+ }
+
 .blue{
     //  background-color:#3778c2 ;
     background-image: linear-gradient(to bottom left, #143562,#3778c2 );
@@ -33,3 +40,8 @@
     height: 250px;
     border-radius: 50%;
   }
+
+  .card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
