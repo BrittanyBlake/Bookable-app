@@ -1,21 +1,44 @@
-<div class="nav">
+<div class="nav container-fluid h-100vh">
     <%= render 'layouts/navigation'%>
+    <h3 class="text-white center-nav"> <%= @user.username%>'s Groups</h3>
 </div>
 
 <%= render 'layouts/messages'%>
 
-<h1> <%= @user.username%>'s Groups</h1>
+<div class="card">
+  <div class="card-horizontal">
+    <div class="card-body">
+      <h4 class="card-title text-muted text-center">You have created <%= pluralize(@groups.count, "group") %> </h4>
+    </div>
+  </div>
+</div>
 
-<h2>You have book <%= pluralize(@groups.count, "group") %>  </h2>
+<div class="container">
+  <div class="row">
+    <div class="col-12 mt-3 text-center">
+			<% @groups.each do |group|%>
+        <div class="card mb-3">
+          <div class="card-horizontal">
+            <div class="card-body">
+              <h4 class="card-title"> <%= link_to group.name, group_path(group), class:"text-decoration-none text-muted" %></h4>
+              <p class="card-text  text-muted "> <strong> Number of books: </strong> <%= group.books.count %> </p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Created <%= time_ago_in_words(group.created_at)%> ago </small>
+          </div>
+        </div>
+			<% end %>
+			<div class="text-center my-5">
+				<%= link_to new_group_path, class: 'btn btn-success text-white h3' do %>
+					<%= fa_icon "plus" %> Create new Group
+                <% end %>
+			</div>
+		</div>
+  </div>
+</div>
+   
 
-<h3>Your groups:</h3>
-<% @groups.each do |group|%>
-    <p> Name <%= link_to group.name, group_path(group) %> </p>
-    
-    <p> Number of books: <%= group.books.count %> </p>
-    <p> Created <%= time_ago_in_words(group.created_at)%> ago </p>
-<% end %>
 
-<%= link_to new_group_path, class: 'btn btn-success text-white h3' do %>
-	<%= fa_icon "plus" %> Create new Group
-<% end %><br>
+
+
