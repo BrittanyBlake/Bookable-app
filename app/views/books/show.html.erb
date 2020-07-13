@@ -17,7 +17,9 @@
           </div>
 
           <div class="card-body">
-            <p class="card-text  text-muted "> <strong> Your thoughts:</strong>  <%= @book.description %> </p>
+          <% if @book.user == current_user%>
+            <p class="card-text  text-muted "> <strong> Personal Opinions:</strong>  <%= @book.description %> </p>
+          <% end %>
             <p class="card-text  text-muted "><strong> Author:</strong> <%= @book.author %></p>
             <p class="card-text  text-muted "> <strong>Number of pages:</strong> <%= @book.number_of_pages %> </p>
             <% if @book.groups.any? %>
@@ -28,11 +30,14 @@
         </div>
         <div class="card-footer">
             <small class="text-muted">Created <%= time_ago_in_words(@book.created_at)%> ago</small><br>
+            <% if @book.user == current_user%>
             <small> 
               <%= link_to edit_book_path(@book), class: 'text-muted' do %>
 				        <%= fa_icon "cog" %> Edit book
               <% end %>
             </small>
+            <% end %>
+            
           </div>
       </div>
     </div>
