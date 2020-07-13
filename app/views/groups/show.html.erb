@@ -17,10 +17,14 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-12 mt-3 text-center">
+    <div class="col-12 mt-3">
 			<% @books.each do |book|%>
         <div class="card mb-3">
           <div class="card-horizontal">
+		  <div class="img-square-wrapper">
+						<%= image_tag(book.image.present? ? book.image.url : '', size: '120x120') %> 
+              
+            </div>
             <div class="card-body">
               <h4 class="card-title"> <%= link_to book.title, book_path(book), class:"text-decoration-none text-muted" %></h4>
               <p class="card-text  text-muted "> <strong> Title: </strong> <%= book.title %> </p>
