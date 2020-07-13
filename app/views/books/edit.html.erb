@@ -2,7 +2,7 @@
     <%= render 'layouts/navigation'%>
 </div>
 
-
+<%= render 'layouts/messages'%>
 <h2>Edit <%= @book.title %></h2>
 <%= form_with(model: @book, local: true) do |f| %>
   <div class="form-group">
