@@ -4,7 +4,7 @@
 
 
  .vertical{
-    margin-top: 25%;
+    padding-top: 25%;
      font-size: 50px;
  }
 
@@ -30,7 +30,7 @@
 
 .blue{
     background-image: linear-gradient(to bottom left, #143562,#3778c2 );
-   height: 100vh
+   height: 100vh;
  }
 
 .avatar {
@@ -43,3 +43,8 @@
     display: flex;
     flex: 1 1 auto;
 }
+
+ .grey{
+    background-color: #F7F7F7;
+     height: 100%;
+ }
