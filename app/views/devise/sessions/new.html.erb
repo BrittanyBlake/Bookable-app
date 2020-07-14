@@ -1,12 +1,13 @@
 <div class="nav">
     <%= render 'layouts/navigation'%>
+    <h1 class="center-nav text-white"><%= t('.sign_in') %></h1>
 </div>
 
 <div class="col-11 mx-5 my-5">
 
 <%= render 'layouts/messages'%>
 
-<h1><%= t('.sign_in') %></h1>
+
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-group">

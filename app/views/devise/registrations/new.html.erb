@@ -2,13 +2,14 @@
 
 <div class="nav">
     <%= render 'layouts/navigation'%>
+    <h1 class="center-nav text-white"><%= t('.sign_up') %></h1>
 </div>
 
 <div class="col-11 mx-5 my-5">
 
 <%= render 'layouts/messages'%>
 
-<h1><%= t('.sign_up') %></h1>
+
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= bootstrap_devise_error_messages! %>

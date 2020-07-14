@@ -1,12 +1,13 @@
 <div class="nav">
     <%= render 'layouts/navigation'%>
+    <h2 class="center-nav text-white">Add a new group</h2>
 </div>
 
 <div class="col-11 mx-5 my-5">
 
 <%= render 'layouts/messages'%>
 
-<h2>Add a new group</h2>
+
 <%= form_with(model: @group, local: true) do |f| %>
   <div class="form-group">
     <%= f.label :name %>

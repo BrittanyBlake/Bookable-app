@@ -1,9 +1,12 @@
 <div class="nav">
     <%= render 'layouts/navigation'%>
+    <h2 class="text-white center-nav">Edit <%= @book.title %></h2>
 </div>
+<div class="col-11 mx-5 my-3">
 
 <%= render 'layouts/messages'%>
-<h2>Edit <%= @book.title %></h2>
+
+
 <%= form_with(model: @book, local: true) do |f| %>
   <div class="form-group">
     <%= f.label :title %>
@@ -26,7 +29,7 @@
   </div>
 
   <div class="form-group row">
-    <%= f.label :groups, class:"col-2 col-form-label text-light"%>
+    <%= f.label :groups, class:"col-2 col-form-label"%>
     <div class="col-10">
     <%= f.collection_check_boxes :group_ids, Group.where(user: current_user), :id, :name do |cb| %>
         <% cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "mx-3 checkbox  shadow rounded") + cb.text } %>
@@ -43,3 +46,4 @@
     <%= f.submit 'Add Book', class: 'btn btn-success' %>
   </div>
 <% end %>
+ </div>

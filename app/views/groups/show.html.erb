@@ -10,7 +10,7 @@
 <div class="card">
   <div class="card-horizontal">
     <div class="card-body">
-      <h4 class="card-title text-muted text-center">This group has <%= pluralize(@group.books.count, "book") %> </h4>
+      <h4 class="card-title text-muted">This group has <%= pluralize(@group.books.count, "book") %>: </h4>
     </div>
   </div>
 </div>
@@ -35,11 +35,7 @@
           </div>
         </div>
 			<% end %>
-			<div class="text-center my-5">
-				<%= link_to new_group_path, class: 'btn btn-success text-white h3' do %>
-					<%= fa_icon "plus" %> Create new Group
-                <% end %>
-			</div>
+		
 		</div>
   </div>
 </div>
