@@ -9,7 +9,10 @@
   <div class=" page-content text-center">
   
     <header class="mt-4 mb-2 py-3  text-white">
-      <%= image_tag @user.image.url, class:"avatar"%>
+	<% if @user.image_url %>
+    	<%= image_tag @user.image.url, class:"avatar"%>
+ 	<% end %>
+      
       <h1> <%= @user.username%>'s Profile </h1>
     </header>
   	<div class="actions">
