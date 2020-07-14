@@ -1,10 +1,10 @@
 class BooksSearchController < ApplicationController
     def index
-        client = Goodreads::Client.new(api_key:Rails.application.credentials.goodreads_client[:goodreads_api_key], api_secret: Rails.application.credentials.goodreads_client[:goodreads_api_secret_key])
+        client = Goodreads::Client.new(api_key: ENV["GOODREADS_API_KEY"], api_secret: ENV["GOODREADS_API_SECRET_KEY"])
     end
 
     def results
-        client = Goodreads::Client.new(api_key:Rails.application.credentials.goodreads_client[:goodreads_api_key], api_secret: Rails.application.credentials.goodreads_client[:goodreads_api_secret_key])
+        client = Goodreads::Client.new(api_key: ENV["GOODREADS_API_KEY"], api_secret: ENV["GOODREADS_API_SECRET_KEY"])
 
         @search_raw = client.search_books(params[:search])
 
