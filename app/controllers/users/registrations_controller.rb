@@ -1,24 +1,22 @@
-# frozen_string_literal: true
-
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-   def new
-     super
-   end
+  def new
+    super
+  end
 
   # POST /resource
-   def create
+  def create
     @user = User.new(sign_up_params)
-      if @user.save
-        sign_in @user
-        redirect_to users_show_path
-      else
-        render 'devise/registrations/new'
-      end
-   end
+    if @user.save
+      sign_in @user
+      redirect_to users_show_path
+    else
+      render 'devise/registrations/new'
+    end
+  end
 
   # GET /resource/edit
   # def edit

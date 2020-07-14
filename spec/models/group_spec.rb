@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Group, type: :model do
-  subject {FactoryBot.build(:group)}
+  subject { FactoryBot.build(:group) }
 
   describe 'validations' do
     it { should validate_presence_of(:name) }
