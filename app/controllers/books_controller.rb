@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
     def index
         @user = current_user
-        @books = Book.where(user: current_user).ordered_by_most_recent
+        @books = Book.where(user: current_user).includes([:groups]).ordered_by_most_recent
     end
 
     def new
@@ -20,7 +20,7 @@ class BooksController < ApplicationController
     end
 
     def external
-        @books = Book.where(user: (User.where.not(id: current_user.id))).ordered_by_most_recent
+        @books = Book.where(user: (User.where.not(id: current_user.id))).includes([:groups]).ordered_by_most_recent
     end
 
     def show
