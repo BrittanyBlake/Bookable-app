@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+    before_action :set_book, only: [:show, :edit, :update]
     def index
         @user = current_user
         @books = Book.where(user: current_user).includes([:groups]).ordered_by_most_recent
@@ -24,15 +25,12 @@ class BooksController < ApplicationController
     end
 
     def show
-        @book = Book.find(params[:id])
     end
 
     def edit
-        @book = Book.find(params[:id])
     end
 
     def update
-        @book = Book.find(params[:id])
         @book.update(book_params)
          if @book.save
             flash[:notice] = "#{@book.title} successfully edited"
@@ -44,6 +42,10 @@ class BooksController < ApplicationController
 
 
     private
+    def set_book
+        @book = Book.find(params[:id])
+    end
+
     def book_params
         params.require(:book).permit(:title, :author, :number_of_pages, :image, :description, group_ids:[])
     end
