@@ -2,49 +2,48 @@
 @import "font-awesome";
 @import "bootstrap";
 
-
- .vertical{
-    padding-top: 25%;
-     font-size: 50px;
- }
-
- .btn{
-     width: 25%;
- }
-
- .nav{
-     background-color:#3778c2
- }
-
- .center-nav{
-     display: flex;
-     align-items: center;
-     margin-left: 25%;
- }
-
- .center-nav-2{
-     display: flex;
-     align-items: center;
-     margin-left: 15%;
- }
-
-.blue{
-    background-image: linear-gradient(to bottom left, #143562,#3778c2 );
-   height: 100vh;
- }
-
-.avatar {
-     width: 250px;
-    height: 250px;
-    border-radius: 50%;
-  }
-
-  .card-horizontal {
-    display: flex;
-    flex: 1 1 auto;
+.vertical {
+  padding-top: 25%;
+  font-size: 50px;
 }
 
- .grey{
-    background-color: #F7F7F7;
-     height: 100%;
- }
+.btn {
+  width: 25%;
+}
+
+.nav {
+  background-color: #3778c2;
+}
+
+.center-nav {
+  display: flex;
+  align-items: center;
+  margin-left: 25%;
+}
+
+.center-nav-2 {
+  display: flex;
+  align-items: center;
+  margin-left: 15%;
+}
+
+.blue {
+  background-image: linear-gradient(to bottom left, #143562, #3778c2);
+  height: 100vh;
+}
+
+.avatar {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+
+.card-horizontal {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.grey {
+  background-color: #f7f7f7;
+  height: 100%;
+}
