@@ -1,11 +1,11 @@
 <% @multi_results.results.work.each do |item| %>
-          <div class="card mb-3">
-            <div class="card-horizontal">
-              <div class="card-body">
-                <h4 class="card-text  text-muted ">Title: <%= item.best_book.title %></h4>
-                <p class="card-text  text-muted ">Author: <%= item.best_book.author.name %></p>
-                <p class="card-text  text-muted ">Year Published: (<%= item.original_publication_year || "N/A" %>)</p>
-              </div>
-            </div>
-          </div>
-        <% end %>
+  <div class="card mb-3">
+    <div class="card-horizontal">
+      <div class="card-body">
+        <h4 class="card-text  text-muted ">Title: <%= item.best_book.title %></h4>
+        <p class="card-text  text-muted ">Author: <%= item.best_book.author.name %></p>
+        <p class="card-text  text-muted ">Year Published: (<%= item.original_publication_year || "N/A" %>)</p>
+      </div>
+    </div>
+  </div>
+<% end %>

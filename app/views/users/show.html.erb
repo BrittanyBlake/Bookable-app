@@ -1,21 +1,18 @@
 <div class=" container-fluid blue h-100vh">
-<%= signed_in %>
+	<%= signed_in %>
 
-<div class="col-11 mx-5 my-3">
-	<%= render 'layouts/messages'%>
-</div>
+	<div class="col-11 mx-5 my-3">
+		<%= render 'layouts/messages'%>
+	</div>
 
-
-  <div class=" page-content text-center">
+	<div class=" page-content text-center">
   
-    <header class="mt-4 mb-2 py-3  text-white">
-	
-    	<%= check_avatar(@user)%>
- 	
-      
-      <h1> <%= @user.username%>'s Profile </h1>
-    </header>
-  	<div class="actions">
+		<header class="mt-4 mb-2 py-3  text-white">
+			<%= check_avatar(@user)%>
+			<h1> <%= @user.username%>'s Profile </h1>
+		</header>
+
+		<div class="actions">
 			<%= link_to edit_user_registration_path(current_user), class: 'text-white h4' do %>
 				<%= fa_icon "cog", class: 'mb-4' %> Account Settings
 			<% end %> <br>
