@@ -101,6 +101,8 @@ To test the Bookable App locally, you will need to clone the repository, navigat
 - $  rails server      -> run this command to start the live server
 - Open  `http://localhost:3000/` in tour preferred browser.
 
+- Please note that if you want to test my app locally you will need a [Goodreads Developer key](https://www.goodreads.com/api).
+
 ### Run tests
 - $  rspec --format documentation
 
