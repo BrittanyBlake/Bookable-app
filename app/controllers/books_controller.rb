@@ -15,7 +15,7 @@ class BooksController < ApplicationController
       flash[:notice] = 'Book was successfully added'
       redirect_to @book
     else
-      flash.now[:alert] = 'something went wrong'
+      flash.now[:alert] = 'something went wrong. Please double-check that you have filled in all the required fields'
       render 'new'
     end
   end
