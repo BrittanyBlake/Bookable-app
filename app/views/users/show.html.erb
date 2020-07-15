@@ -9,9 +9,9 @@
   <div class=" page-content text-center">
   
     <header class="mt-4 mb-2 py-3  text-white">
-	<% if @user.image_url %>
-    	<%= image_tag @user.image.url, class:"avatar"%>
- 	<% end %>
+	
+    	<%= check_avatar(@user)%>
+ 	
       
       <h1> <%= @user.username%>'s Profile </h1>
     </header>
