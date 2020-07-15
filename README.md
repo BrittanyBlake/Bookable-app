@@ -102,7 +102,7 @@ To test the Bookable App locally, you will need to clone the repository, navigat
 - Open  `http://localhost:3000/` in tour preferred browser.
 
 ### Run tests
-- $  respec --format documentation
+- $  rspec --format documentation
 
 ### Integration and Unit Test
 - Rspec
