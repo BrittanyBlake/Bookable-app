@@ -4,7 +4,7 @@
 </div>
 
 
-<div class="col-11 mx-5 py-5">
+<div class="col-7 mx-auto py-5">
 
 <%= render 'layouts/messages'%>
 
@@ -32,7 +32,7 @@
 
   <div class="form-group row">
     <%= f.label :groups, class:"col-2 col-form-label"%>
-    <div class="col-10">
+    <div class="col-10 px-0 mx-0">
     <%= f.collection_check_boxes :group_ids, Group.where(user: current_user), :id, :name do |cb| %>
         <% cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "mx-3 checkbox  shadow rounded") + cb.text } %>
     <% end %> 
