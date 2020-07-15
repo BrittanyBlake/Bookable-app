@@ -1,9 +1,7 @@
 class BooksSearchController < ApplicationController
   before_action :set_client, only: %i[index results]
 
-  def index
-   
-  end
+  def index; end
 
   def results
     @search_raw = @client.search_books(search_params)
@@ -22,7 +20,7 @@ class BooksSearchController < ApplicationController
 
   def set_client
     @client = Goodreads::Client.new(api_key: ENV['GOODREADS_API_KEY'], api_secret: ENV['GOODREADS_API_SECRET_KEY'])
-  end 
+  end
 
   def search_params
     params[:search]
