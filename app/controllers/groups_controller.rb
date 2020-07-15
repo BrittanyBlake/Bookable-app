@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+  before_action :set_group, only: %i[show]
+
   def index
     @user = current_user
     @groups = Group.where(user: current_user).ordered_alphabetically
@@ -20,7 +22,6 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.find(params[:id])
     @books = @group.books
   end
 
@@ -28,5 +29,9 @@ class GroupsController < ApplicationController
 
   def group_params
     params.require(:group).permit(:name)
+  end
+
+  def set_group
+    @group = Group.find(params[:id])
   end
 end
