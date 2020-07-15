@@ -91,4 +91,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  BOOKABLEAPP::Application.configure do
+     config.assets.compile = true
+end
 end
