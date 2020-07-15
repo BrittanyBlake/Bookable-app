@@ -1,3 +1,13 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.vertical {
+  padding-top: 25%;
+  font-size: 50px;
+}
+
+.blue {
+  background-image: linear-gradient(to bottom left, #143562, #3778c2);
+  height: 100vh;
+}
