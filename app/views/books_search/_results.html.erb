@@ -1,6 +1,6 @@
 
 <div class="nav container-fluid h-100vh">
-    <%= render 'layouts/navigation'%>
+    <%= signed_in %>
     <h4 class="text-white center-nav-2"> Showing results for <%= if @search_raw then @search_raw.query end %> from GoodReads</h4>
 </div>
 
@@ -9,32 +9,7 @@
 <div class="container">
   <div class="row">
     <div class="col-12 mt-3">
-      <% if @multi_results %>
-        <% @multi_results.results.work.each do |item| %>
-          <div class="card mb-3">
-            <div class="card-horizontal">
-              <div class="card-body">
-                <h4 class="card-text  text-muted ">Title: <%= item.best_book.title %></h4>
-                <p class="card-text  text-muted ">Author: <%= item.best_book.author.name %></p>
-                <p class="card-text  text-muted ">Year Published: (<%= item.original_publication_year || "N/A" %>)</p>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-
-      <% if @unique_result  %>
-        <div class="card mb-3">
-          <div class="card-horizontal">
-            <div class="card-body">
-              <h4 class="card-text  text-muted ">Title: <%= @unique_result.results.work.best_book.title %></h4>
-              <p class="card-text  text-muted ">Author: <%= @unique_result.results.work.best_book.author.name %></p>
-              <p class="card-text  text-muted ">Year Published: (<%= @unique_result.results.work.original_publication_year || "N/A" %>)</p>
-            </div>
-          </div>
-        </div>
-      <% end %>
-       <%= link_to t('.back'), :back, class:"text-center" %>
+      <%= search_results%>
     </div>
     
   </div>

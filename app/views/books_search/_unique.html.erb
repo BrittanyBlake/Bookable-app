@@ -1,0 +1,9 @@
+ <div class="card mb-3">
+          <div class="card-horizontal">
+            <div class="card-body">
+              <h4 class="card-text  text-muted ">Title: <%= @unique_result.results.work.best_book.title %></h4>
+              <p class="card-text  text-muted ">Author: <%= @unique_result.results.work.best_book.author.name %></p>
+              <p class="card-text  text-muted ">Year Published: (<%= @unique_result.results.work.original_publication_year || "N/A" %>)</p>
+            </div>
+          </div>
+        </div>

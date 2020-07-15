@@ -1,9 +1,12 @@
 class BooksSearchController < ApplicationController
   before_action :set_client, only: %i[index results]
 
-  def index; end
+  def index
+   
+  end
 
   def results
+
     @search_raw = @client.search_books(params[:search])
 
     if @search_raw.query == '' || @search_raw.results_end == '0'
