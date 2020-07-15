@@ -24,9 +24,8 @@
           <% end %>
             <p class="card-text  text-muted "><strong> Author:</strong> <%= @book.author %></p>
             <p class="card-text  text-muted "> <strong>Number of pages:</strong> <%= @book.number_of_pages %> </p>
-            <% if @book.groups.any? %>
-              <%= render @book.groups%>
-            <% end %>
+
+              <%= book_group %>
             
           </div>
         </div>
