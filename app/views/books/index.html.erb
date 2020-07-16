@@ -28,7 +28,7 @@
               <h4 class="card-title"> <%= link_to book.title, book_path(book), class:"text-decoration-none text-muted" %></h4>
               <p class="card-text  text-muted ">Author: <%= book.author %></p>
               <p class="card-text  text-muted "> Number of pages: <%= book.number_of_pages %> </p>
-                <%= render book.groups if book.groups.any? %>
+                <%= render book.groups%>
                 
             </div>
           </div>
