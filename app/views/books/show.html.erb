@@ -1,0 +1,40 @@
+
+
+<div class="nav">
+    <%= signed_in %>
+    <h3 class="text-white center-nav"> <%= @book.title%></h3>
+    
+</div>
+
+
+<%= render 'layouts/messages'%>
+<div class="container">
+  <div class="row">
+    <div class="col-12 mt-3">
+      <div class="card mb-3">
+        <div class="card-horizontal">
+
+          <div class="img-square-wrapper">
+            <%= image_tag(@book.image.present? ? @book.image.url : 'defaultbook.jpeg', size: '200x200') %> 
+          </div>
+
+          <div class="card-body">
+          <%= book_user%>
+            
+            <p class="card-text  text-muted "><strong> Author:</strong> <%= @book.author %></p>
+            <p class="card-text  text-muted "> <strong>Number of pages:</strong> <%= @book.number_of_pages %> </p>
+
+              <%= book_group %>
+            
+          </div>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted">Created <%= time_ago_in_words(@book.created_at)%> ago</small><br>
+            <%= book_edit %>
+            
+            
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

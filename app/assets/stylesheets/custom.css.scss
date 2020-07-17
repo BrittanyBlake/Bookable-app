@@ -1,0 +1,26 @@
+
+@import "font-awesome";
+@import "bootstrap";
+
+.btn {
+  width: 25%;
+}
+
+.nav {
+  background-color: #3778c2;
+}
+
+.grey {
+  background-color: #f7f7f7;
+  height: 100%;
+}
+
+@media only screen and (max-width: 500px) {
+  .center-nav {
+    display: none;
+  }
+
+  .btn {
+    width: 50%;
+  }
+}

@@ -1,0 +1,22 @@
+  
+<div class="nav">
+  <%= render 'layouts/navigation'%>
+</div>
+
+<div class="col-11 mx-5 py-3">
+	<%= render 'layouts/messages'%>
+</div>
+
+<div class="container text-center">
+  <h1 class="vertical">Bookable</h1>
+  <p> Your bookclub tracking app</p>
+    
+  <%= link_to 'LOG IN', new_user_session_path, class:"btn btn-primary", id: 'login' %><br>
+  <%= link_to 'SIGN UP', new_user_registration_path, class:"btn", id: 'submit'%>
+    
+</div>
+
+
+
+
+

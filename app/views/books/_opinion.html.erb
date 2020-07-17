@@ -1,0 +1,3 @@
+<% if @book.user == current_user%>
+    <p class="card-text  text-muted "> <strong> Personal Opinions:</strong>  <%= @book.description %> </p>
+<% end %>

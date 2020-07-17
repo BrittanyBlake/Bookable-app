@@ -1,0 +1,51 @@
+<div class="nav container-fluid h-100vh">
+    <%= signed_in %>
+    <h3 class="text-white center-nav"> <%= @user.username%>'s Books</h3>
+</div>
+
+<%= render 'layouts/messages'%>
+
+<div class="card">
+  <div class="card-horizontal">
+    <div class="card-body">
+      <h4 class="card-title text-muted">You have read <%= pluralize(@books.count, "book") %>:</h4>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 mt-3">
+			<% @books.each do |book|%>
+        <div class="card mb-3">
+          <div class="card-horizontal">
+            <div class="img-square-wrapper">
+						<%= image_tag(book.image.present? ? book.image.url : 'defaultbook.jpeg', size: '200x200') %> 
+              
+            </div>
+            <div class="card-body">
+						
+              <h4 class="card-title"> <%= link_to book.title, book_path(book), class:"text-decoration-none text-muted" %></h4>
+              <p class="card-text  text-muted ">Author: <%= book.author %></p>
+              <p class="card-text  text-muted "> Number of pages: <%= book.number_of_pages %> </p>
+                <%= render book.groups%>
+                
+            </div>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Created <%= time_ago_in_words(book.created_at)%> ago</small>
+          </div>
+        </div>
+			<% end %>
+			<div class="text-center my-5">
+				<%= link_to new_book_path, class: 'btn btn-success text-white h3' do %>
+					<%= fa_icon "plus" %> Add new Book
+				<% end %>
+			</div>
+		</div>
+  </div>
+</div>
+   
+
+
+
