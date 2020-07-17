@@ -1,0 +1,41 @@
+<div class=" container-fluid blue h-100vh">
+	<%= signed_in %>
+
+	<div class="col-11 mx-5 my-3">
+		<%= render 'layouts/messages'%>
+	</div>
+
+	<div class=" page-content text-center">
+  
+		<header class="mt-4 mb-2 py-3  text-white">
+			<%= check_avatar(@user)%>
+			<h1> <%= @user.username%>'s Profile </h1>
+		</header>
+
+		<div class="actions">
+			<%= link_to edit_user_registration_path(current_user), class: 'text-white h4' do %>
+				<%= fa_icon "cog", class: 'mb-4' %> Account Settings
+			<% end %> <br>
+			<%= link_to books_path(current_user), class: 'text-white h4' do %>
+				<%= fa_icon "book", class: 'mb-4' %> All my Books
+			<% end %><br>
+			<%= link_to external_path, class: 'text-white h4' do %>
+				<%= fa_icon "th-list", class: 'mb-4' %> Books you might like
+			<% end %><br>
+			<%= link_to new_book_path, class: 'text-white h4' do %>
+				<%= fa_icon "plus", class: 'mb-4' %> Add new Book
+			<% end %><br>
+			<%= link_to groups_path, class: 'text-white h4' do %>
+				<%= fa_icon "users", class: 'mb-4' %> Groups
+			<% end %><br>
+			<%= link_to goodreads_path, class: 'text-white h4' do %>
+				<%= fa_icon "search", class: 'mb-4' %> Search Goodreads
+			<% end %><br>
+		</div>
+	</div>
+</div>
+
+
+
+
+ 

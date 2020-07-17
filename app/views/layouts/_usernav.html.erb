@@ -1,0 +1,20 @@
+
+
+<nav class="navbar navbar-expand-lg navbar-light">
+  <%= link_to 'BookableApp', root_path, class:"navbar-brand text-white" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <%= link_to t('.back'), :back, class:"nav-link text-white" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "signout", destroy_user_session_path, class:"nav-link text-white", method: :delete  %>
+        </li>
+    </ul>
+  </div>
+</nav>
